@@ -14,13 +14,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-//  "devEngines": {
-//    "packageManager": {
-//      "name": "pnpm",
-//      "version": "^11.5.1",
-//      "onFail": "download"
-//    }
-//  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.1",
+      "onFail": "download"
+    }
+  },
   "type": "module",
   "dependencies": {
     "express": "^5.2.1"
