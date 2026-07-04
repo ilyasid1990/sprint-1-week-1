@@ -1,3 +1,4 @@
+import serverless from "serverless-http";
 import express, {type Express} from "express";
 
 import { setupApp } from "./setup-app.js";
@@ -10,9 +11,13 @@ setupApp(app);
 
 const PORT = process.env.PORT || 3003;
 
+export default serverless(app);
+
+/*
 // Запуск приложения
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+*/
 
