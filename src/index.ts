@@ -1,9 +1,9 @@
-import express from "express";
+import express, {type Express} from "express";
 
 import { setupApp } from "./setup-app.js";
 
 // Создание приложения
-const app = express();
+export const app: Express = express();
 setupApp(app);
 
 // Порт приложения
