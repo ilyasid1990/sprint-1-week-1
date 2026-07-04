@@ -264,9 +264,6 @@ importers:
       express:
         specifier: ^5.2.1
         version: 5.2.1(supports-color@5.5.0)
-      serverless-http:
-        specifier: ^4.0.0
-        version: 4.0.0
     devDependencies:
       '@types/express':
         specifier: ^5.0.6
@@ -2107,10 +2104,6 @@ packages:
     resolution: {integrity: sha512-xRXBn0pPqQTVQiC8wyQrKs2MOlX24zQ0POGaj0kultvoOCstBQM5yvOhAVSUwOMjQtTvsPWoNCHfPGwaaQJhTw==}
     engines: {node: '>= 18'}
 
-  serverless-http@4.0.0:
-    resolution: {integrity: sha512-KKl9h1+VApX9y2vHsVMogf906UXBwO3FDYiWPzqS0mCjEEx4Sx91JrssbWA7RN43HBuxrtoh8MkocZPvjyGnLg==}
-    engines: {node: '>=12.0'}
-
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
@@ -2602,7 +2595,7 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@eslint-community/eslint-utils@4.9.1(eslint@10.6.0)':
+  '@eslint-community/eslint-utils@4.9.1(eslint@10.6.0(supports-color@5.5.0))':
     dependencies:
       eslint: 10.6.0(supports-color@5.5.0)
       eslint-visitor-keys: 3.4.3
@@ -3081,7 +3074,7 @@ snapshots:
 
   '@typescript-eslint/utils@8.62.1(eslint@10.6.0(supports-color@5.5.0))(typescript@6.0.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@10.6.0)
+      '@eslint-community/eslint-utils': 4.9.1(eslint@10.6.0(supports-color@5.5.0))
       '@typescript-eslint/scope-manager': 8.62.1
       '@typescript-eslint/types': 8.62.1
       '@typescript-eslint/typescript-estree': 8.62.1(supports-color@5.5.0)(typescript@6.0.3)
@@ -3506,7 +3499,7 @@ snapshots:
 
   eslint@10.6.0(supports-color@5.5.0):
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@10.6.0)
+      '@eslint-community/eslint-utils': 4.9.1(eslint@10.6.0(supports-color@5.5.0))
       '@eslint-community/regexpp': 4.12.2
       '@eslint/config-array': 0.23.5(supports-color@5.5.0)
       '@eslint/config-helpers': 0.6.0
@@ -4496,8 +4489,6 @@ snapshots:
       send: 1.2.1(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
-
-  serverless-http@4.0.0: {}
 
   setprototypeof@1.2.0: {}
 
