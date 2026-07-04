@@ -1,20 +1,15 @@
-// Source - https://stackoverflow.com/q/76576788
-// Posted by Zeth, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-07-04, License - CC BY-SA 4.0
-
 {
   "version": 2,
-  "name": "sprint-1-week-1",
   "builds": [
     {
-      "src": "src/index.ts",
-      "use": "@now/node"
+      "src": "./index.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/index.ts"
+      "dest": "./index.ts"
     }
   ]
 }
