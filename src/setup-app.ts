@@ -5,7 +5,6 @@ import { Resolutions, type VideoDBType } from "./types-video.js";
 import {
   type VideoInputDto,
   type VideoErrorDto,
-  type UpdateVideoDto,
 } from "./video-dto.js";
 
 export const setupApp = (app: Express) => {
