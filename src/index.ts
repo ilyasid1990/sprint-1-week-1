@@ -3,7 +3,7 @@ import express, {type Express} from "express";
 import { setupApp } from "./setup-app.js";
 
 // Создание приложения
-export const app: Express = express();
+const app: Express = express();
 setupApp(app);
 
 // Порт приложения
@@ -16,4 +16,3 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
-export default app;
