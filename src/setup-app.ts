@@ -83,7 +83,7 @@ export const setupApp = (app: Express) => {
     const videoById = db.videos.find((el) => el.id === idNum);
 
     if (!videoById) {
-      res.status(HttpStatus.NotFound);
+      res.sendStatus(HttpStatus.NotFound);
       return;
     }
 
@@ -102,7 +102,7 @@ export const setupApp = (app: Express) => {
     const videoIndex = db.videos.findIndex((el) => el.id === idNum);
 
     if (videoIndex === -1) {
-      res.status(HttpStatus.NotFound);
+      res.sendStatus(HttpStatus.NotFound);
       return;
     }
 
