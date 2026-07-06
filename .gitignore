@@ -20,10 +20,10 @@ node_modules/
 # ==========================================
 # Сборка и компиляция (TypeScript)
 # ==========================================
-#dist/
-#build/
-#out/
-#.tsbuildinfo
+dist/
+build/
+out/
+.tsbuildinfo
 
 # Кэш линтеров и сборщиков
 .eslintcache
