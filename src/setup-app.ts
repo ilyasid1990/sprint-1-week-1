@@ -28,19 +28,40 @@ export const setupApp = (app: Express) => {
     // Создаем массив для сбора всех ошибок
     const errorsMessages: VideoErrorDto[] = [];
 
-    // 1. Валидация входных данных
-    if (!title || typeof title !== "string" || !title.trim()) {
-      errorsMessages.push({ message: "Title is required", field: "title" });
-    }
-    if (!author || typeof author !== "string" || !author.trim()) {
-      errorsMessages.push({ message: "Author is required", field: "author" });
-    }
-    if (!availableResolutions || !availableResolutions.length) {
+    // 1. Валидация Title (обязательное, строка, длина до 40)
+    if (!title || typeof title !== "string" || !title.trim() || title.length > 40) {
       errorsMessages.push({
-        message: "Available resolutions are required",
-        field: "availableResolutions",
+        message: "Title is required and should be max 40 chars",
+        field: "title"
       });
     }
+
+    // 2. Валидация Author (обязательное, строка, длина до 20)
+    if (!author || typeof author !== "string" || !author.trim() || author.length > 20) {
+      errorsMessages.push({
+        message: "Author is required and should be max 20 chars",
+        field: "author"
+      });
+    }
+
+    // 3. Валидация Available Resolutions (не пустой массив, элементы соответствуют enum)
+    if (!availableResolutions || !Array.isArray(availableResolutions) || availableResolutions.length === 0) {
+      errorsMessages.push({
+        message: "Available resolutions are required and must be a non-empty array",
+        field: "availableResolutions",
+      });
+    } else {
+      const isValidEnum = availableResolutions.every((r) =>
+        Object.values(Resolutions).includes(r)
+      );
+      if (!isValidEnum) {
+        errorsMessages.push({
+          message: "Invalid resolution value detected",
+          field: "availableResolutions",
+        });
+      }
+    }
+
     // ОТПРАВЛЯЕМ ОШИБКИ ТОЛЬКО ЕСЛИ ОНИ ЕСТЬ
     if (errorsMessages.length > 0) {
       res.status(HttpStatus.BadRequest).json({ errorsMessages });
